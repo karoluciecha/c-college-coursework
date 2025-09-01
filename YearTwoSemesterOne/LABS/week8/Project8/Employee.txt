@@ -1,0 +1,6 @@
+Name: Karol, Number: 22, Hours Weekly: 30.00, Hourly Rate: 12.70
+Name: Maciej, Number: 28, Hours Weekly: 50.00, Hourly Rate: 13.00
+Name: Ada, Number: 27, Hours Weekly: 10.00, Hourly Rate: 99.99
+Name: Justyna, Number: 31, Hours Weekly: 44.00, Hourly Rate: 45.00
+Name: Dawid, Number: 654, Hours Weekly: 23.00, Hourly Rate: 34.00
+Name: 4, Number: 43, Hours Weekly: 34.00, Hourly Rate: 343.53

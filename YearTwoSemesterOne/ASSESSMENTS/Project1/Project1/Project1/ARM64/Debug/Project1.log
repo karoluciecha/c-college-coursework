@@ -1,0 +1,4 @@
+﻿  main.c
+C:\Users\herrprince\OneDrive - Atlantic TU\Y2SEM1\PP\ASSESSMENTS\Project1\Project1\main.c(49,27): warning C4267: 'function': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\herrprince\OneDrive - Atlantic TU\Y2SEM1\PP\ASSESSMENTS\Project1\Project1\main.c(383,11): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Project1.vcxproj -> C:\Users\herrprince\OneDrive - Atlantic TU\Y2SEM1\PP\ASSESSMENTS\Project1\Project1\ARM64\Debug\Project1.exe
