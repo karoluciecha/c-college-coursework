@@ -16,6 +16,7 @@ typedef struct {
     double totalPayment;
 } Employee;
 
+int getIntInput(const char* prompt);
 double getDoubleInput(const char* prompt);
 
 double calculateCommission(double sales) {
@@ -34,21 +35,6 @@ double calculateMileageExpenses(double mileage) {
     else {
         return mileage * MILEAGE_RATE_HIGH;
     }
-}
-
-int getIntInput(const char* prompt) {
-    int value;
-    while (1) {
-        printf("%s", prompt);
-        if (scanf_s("%d", &value) == 1) {
-            break;
-        }
-        else {
-            printf("Invalid input. Please enter a valid integer.\n");
-            while (getchar() != '\n');
-        }
-    }
-    return value;
 }
 
 void runMonthlyPayrollProgram() {

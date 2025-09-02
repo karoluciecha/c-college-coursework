@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void displayMainMenu();
 void runVariablesIOProgram();
@@ -9,7 +10,10 @@ void runAverageFactorialProgram();
 void runMonthlyPayrollProgram();
 void runArraysAndFilesProgram();
 void runStudendGradingSystemProgram();
+void runEmployeeRecordsProgram();
 double getDoubleInput(const char* prompt);
+int getIntInput(const char* prompt);
+void getStringInput(const char* prompt, char* buffer, size_t bufferSize);
 
 int main() {
 int choice;
@@ -45,6 +49,9 @@ printf("==== WELCOME TO THE C PROGRAM COLLECTION ====\n\n");
 		case 7:
 			runStudendGradingSystemProgram();
 			break;
+        case 8:
+            runEmployeeRecordsProgram();
+            break;
 		case 0:
 			printf("Program terminated.\n\n");
 			break;
@@ -65,8 +72,25 @@ void displayMainMenu() {
     printf("5. Monthly Payroll\n");
     printf("6. Arrays & Files\n");
 	printf("7. Student Grading System\n");
+    printf("8. Employee Records\n");
     printf("0. Exit\n");
     printf("\nSelect an option: ");
+}
+
+int getIntInput(const char* prompt) {
+    int value;
+    while (1) {
+        printf("%s", prompt);
+        if (scanf_s("%d", &value) == 1) {
+            break;
+        }
+        else {
+            printf("Invalid input. Please enter a valid integer.\n");
+            while (getchar() != '\n');
+        }
+    }
+    while (getchar() != '\n');
+    return value;
 }
 
 double getDoubleInput(const char* prompt) {
@@ -82,4 +106,31 @@ double getDoubleInput(const char* prompt) {
         }
     }
     return value;
+}
+
+void getStringInput(const char* prompt, char* buffer, size_t bufferSize) {
+    while (1) {
+        printf("%s", prompt);
+        if (fgets(buffer, bufferSize, stdin) != NULL) {
+            // Remove the newline character if it's in the buffer
+            size_t len = strlen(buffer);
+            if (len > 0 && buffer[len - 1] == '\n') {
+                buffer[len - 1] = '\0';
+            }
+
+            // Check if the string is not empty
+            if (strlen(buffer) > 0) {
+                return; // Valid input, exit the loop
+            }
+            else {
+                printf("Input cannot be empty. Please try again.\n");
+            }
+        }
+        else {
+            printf("Invalid input. Please enter a valid string.\n");
+
+            // Clear the input buffer if an error occurred
+            while (getchar() != '\n');
+        }
+    }
 }

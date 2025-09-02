@@ -7,34 +7,7 @@
 #define NO_SUBJECTS 7
 
 double getDoubleInput(const char* prompt);
-
-// Method to get String input
-void getStringInput(const char* prompt, char* buffer, size_t bufferSize) {
-    while (1) {
-        printf("%s", prompt);
-        if (fgets(buffer, bufferSize, stdin) != NULL) {
-            // Remove the newline character if it's in the buffer
-            size_t len = strlen(buffer);
-            if (len > 0 && buffer[len - 1] == '\n') {
-                buffer[len - 1] = '\0';
-            }
-
-            // Check if the string is not empty
-            if (strlen(buffer) > 0) {
-                return; // Valid input, exit the loop
-            }
-            else {
-                printf("Input cannot be empty. Please try again.\n");
-            }
-        }
-        else {
-            printf("Invalid input. Please enter a valid string.\n");
-
-            // Clear the input buffer if an error occurred
-            while (getchar() != '\n');
-        }
-    }
-}
+void getStringInput(const char* prompt, char* buffer, size_t bufferSize);
 
 
 // the compare function for double values

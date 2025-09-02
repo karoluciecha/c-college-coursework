@@ -1,0 +1,4 @@
+﻿  main.c
+Y:\Y2SEM1\PP\LABS\week9\Project9\main.c(27,27): warning C4267: 'function': conversion from 'size_t' to 'int', possible loss of data
+Y:\Y2SEM1\PP\LABS\week9\Project9\main.c(29,26): warning C4013: 'strlen' undefined; assuming extern returning int
+  Project9.vcxproj -> Y:\Y2SEM1\PP\LABS\week9\Project9\ARM64\Debug\Project9.exe
