@@ -11,6 +11,8 @@ void runMonthlyPayrollProgram();
 void runArraysAndFilesProgram();
 void runStudendGradingSystemProgram();
 void runEmployeeRecordsProgram();
+void runMayorElectoralCollegeProgram();
+void runMonthlySalesProgram();
 double getDoubleInput(const char* prompt);
 int getIntInput(const char* prompt);
 void getStringInput(const char* prompt, char* buffer, size_t bufferSize);
@@ -52,6 +54,12 @@ printf("==== WELCOME TO THE C PROGRAM COLLECTION ====\n\n");
         case 8:
             runEmployeeRecordsProgram();
             break;
+        case 9:
+            runMayorElectoralCollegeProgram();
+            break;
+        case 10:
+            runMonthlySalesProgram();
+            break;
 		case 0:
 			printf("Program terminated.\n\n");
 			break;
@@ -73,6 +81,8 @@ void displayMainMenu() {
     printf("6. Arrays & Files\n");
 	printf("7. Student Grading System\n");
     printf("8. Employee Records\n");
+    printf("9. Mayor Electoral College System\n");
+    printf("10. (Exam One) Monthly Sales System\n");
     printf("0. Exit\n");
     printf("\nSelect an option: ");
 }
