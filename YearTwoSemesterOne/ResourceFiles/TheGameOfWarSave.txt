@@ -1,7 +1,7 @@
 0
 2
 4
-0
+80
 Karol
 Test
 Player

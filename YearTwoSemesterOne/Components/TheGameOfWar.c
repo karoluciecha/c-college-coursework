@@ -1031,7 +1031,7 @@ void gameSummary() {
 
 void readInHighestScoreLeaderboard() {
     FILE* file;
-    const char* filePath = "./highLeaderboard.txt";
+    const char* filePath = "ResourceFiles/highLeaderboard.txt";
 
     if (fopen_s(&file, filePath, "r") != 0) {
         gameStatus = 11;
@@ -1083,7 +1083,7 @@ void showHighestScoreLeaderboard() {
 
 void writeOutHighestScoreLeaderboard() {
     FILE* file;
-    const char* filePath = "./highLeaderboard.txt";
+    const char* filePath = "ResourceFiles/highLeaderboard.txt";
 
     if (fopen_s(&file, filePath, "w") != 0) {
         gameStatus = 11;
