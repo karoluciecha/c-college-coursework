@@ -5,6 +5,7 @@
 void displayMainMenu();
 void runDailySalesProgram();
 void runEmployeeRecordsProgram();
+void runLibraryProgram();
 double getDoubleInput(const char* prompt);
 int getIntInput(const char* prompt);
 void getStringInput(const char* prompt, char* buffer, size_t bufferSize);
@@ -31,7 +32,7 @@ printf("=========== YEAR TWO SEMESTER TWO ===========\n\n");
             runEmployeeRecordsProgram();
 			break;
 		case 3:
-            // runDayCalculatorProgram();
+            runLibraryProgram();
 			break;
 		case 4:
             // runAverageFactorialProgram();
@@ -75,7 +76,7 @@ void displayMainMenu() {
     printf("==== MAIN MENU ====\n\n");
     printf("1. Daily Sales Stats\n");
     printf("2. Employee Records\n");
-    printf("3. Day Calculator\n");
+    printf("3. Open Books Library\n");
     printf("4. Average & Factorial\n");
     printf("5. Monthly Payroll\n");
     printf("6. Arrays & Files\n");
@@ -121,28 +122,42 @@ double getDoubleInput(const char* prompt) {
 }
 
 void getStringInput(const char* prompt, char* buffer, size_t bufferSize) {
-    while (1) {
-        printf("%s", prompt);
-        if (fgets(buffer, bufferSize, stdin) != NULL) {
-            // Remove the newline character if it's in the buffer
-            size_t len = strlen(buffer);
-            if (len > 0 && buffer[len - 1] == '\n') {
-                buffer[len - 1] = '\0';
-            }
+	while (1) {
+		printf("%s", prompt);
 
-            // Check if the string is not empty
-            if (strlen(buffer) > 0) {
-                return; // Valid input, exit the loop
-            }
-            else {
-                printf("Input cannot be empty. Please try again.\n");
-            }
-        }
-        else {
-            printf("Invalid input. Please enter a valid string.\n");
+		// Read input from stdin
+		if (fgets(buffer, (int)bufferSize, stdin) != NULL) {
+			size_t len = strlen(buffer);
 
-            // Clear the input buffer if an error occurred
-            while (getchar() != '\n');
-        }
-    }
+			// Check if input was truncated
+			if (len >= bufferSize - 1 && buffer[len - 1] != '\n') {
+				printf("Input is too long. Please enter no more than %zu characters.\n", bufferSize - 1);
+				while (getchar() != '\n'); // Clear remaining input
+				continue;
+			}
+
+			// Remove the newline character
+			if (len > 0 && buffer[len - 1] == '\n') {
+				buffer[len - 1] = '\0';
+				len--; // Adjust length after removing newline
+			}
+
+			// Trim leading and trailing whitespace
+			char* start = buffer;
+			while (isspace((unsigned char)*start)) start++;
+			char* end = buffer + len - 1;
+			while (end >= start && isspace((unsigned char)*end)) end--;
+
+			// Adjust string to trimmed version
+			*(end + 1) = '\0';
+			memmove(buffer, start, end - start + 2); // +2 to include '\0'
+
+			// Check if the trimmed string is not empty
+			if (strlen(buffer) > 0) return;
+			else printf("Input cannot be empty. Please try again.\n");
+		}
+		else {
+			printf("Error reading input. Please try again.\n");
+		}
+	}
 }

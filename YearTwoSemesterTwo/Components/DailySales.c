@@ -19,6 +19,8 @@ void runDailySalesProgram() {
 
     if (!file) {
         printf("Error opening file!\n\n");
+        system("pause");
+        system("cls");
         return;
     }
 
