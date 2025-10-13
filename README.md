@@ -43,7 +43,7 @@ This sets up a terminal in VS Code that can access the `cl.exe` compiler.
 3. Compile all C files (including those in the `Components` folder) and remove temporary `.obj` files:
 
 ```bash
-cl Main.c Components\*.c && del *.obj && del Components\*.obj
+cl Main.c Components\*.c && del *.obj
 ```
 
 > This will produce a single executable file `Main.exe`.

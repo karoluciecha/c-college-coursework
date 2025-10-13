@@ -13,13 +13,13 @@ typedef struct {
     int maxSale;
 } Department;
 
-int main() {
+void runDailySalesProgram() {
     FILE* file;
-    fopen_s(&file, "DailySales.txt", "r");
+    fopen_s(&file, "ResourceFiles/DailySales.txt", "r");
 
     if (!file) {
-        printf("Error opening file!\n");
-        return 1;
+        printf("Error opening file!\n\n");
+        return;
     }
 
     Department departments[MAX_DEPARTMENTS] = {
@@ -58,6 +58,9 @@ int main() {
         printf("%s - total sales: %d, average sales: %.2f, max sale: %d\n",
             departments[i].name, departments[i].totalSales, avgSales, departments[i].maxSale);
     }
+    printf("\n");
+    system("pause");
+    system("cls");
 
-    return 0;
+    return;
 }

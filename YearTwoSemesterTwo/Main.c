@@ -3,18 +3,8 @@
 #include <string.h>
 
 void displayMainMenu();
-void runVariablesIOProgram();
-void runLightCalculationsProgram();
-void runDayCalculatorProgram();
-void runAverageFactorialProgram();
-void runMonthlyPayrollProgram();
-void runArraysAndFilesProgram();
-void runStudendGradingSystemProgram();
+void runDailySalesProgram();
 void runEmployeeRecordsProgram();
-void runMayorElectoralCollegeProgram();
-void runMonthlySalesProgram();
-void runHousePriceCalculatorProgram();
-void runTheGameOfWarProgram();
 double getDoubleInput(const char* prompt);
 int getIntInput(const char* prompt);
 void getStringInput(const char* prompt, char* buffer, size_t bufferSize);
@@ -35,40 +25,40 @@ printf("=========== YEAR TWO SEMESTER TWO ===========\n\n");
 
 		switch (choice) {
 		case 1:
-			runVariablesIOProgram();
+			runDailySalesProgram();
 			break;
 		case 2:
-            runLightCalculationsProgram();
+            runEmployeeRecordsProgram();
 			break;
 		case 3:
-            runDayCalculatorProgram();
+            // runDayCalculatorProgram();
 			break;
 		case 4:
-            runAverageFactorialProgram();
+            // runAverageFactorialProgram();
 			break;
 		case 5:
-            runMonthlyPayrollProgram();
+            // runMonthlyPayrollProgram();
 			break;
         case 6:
-            runArraysAndFilesProgram();
+            // runArraysAndFilesProgram();
             break;
 		case 7:
-			runStudendGradingSystemProgram();
+			// runStudendGradingSystemProgram();
 			break;
         case 8:
-            runEmployeeRecordsProgram();
+            // runEmployeeRecordsProgram();
             break;
         case 9:
-            runMayorElectoralCollegeProgram();
+            //runMayorElectoralCollegeProgram();
             break;
         case 10:
-            runMonthlySalesProgram();
+            //runMonthlySalesProgram();
             break;
         case 11:
-            runHousePriceCalculatorProgram();
+           // runHousePriceCalculatorProgram();
             break;
         case 12:
-            runTheGameOfWarProgram();
+          //  runTheGameOfWarProgram();
             break;
 		case 0:
 			printf("Program terminated.\n\n");
@@ -83,8 +73,8 @@ printf("=========== YEAR TWO SEMESTER TWO ===========\n\n");
 
 void displayMainMenu() {
     printf("==== MAIN MENU ====\n\n");
-    printf("1. Variables Input/Output\n");
-    printf("2. Light Calculations\n");
+    printf("1. Daily Sales Stats\n");
+    printf("2. Employee Records\n");
     printf("3. Day Calculator\n");
     printf("4. Average & Factorial\n");
     printf("5. Monthly Payroll\n");
