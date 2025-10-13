@@ -1,0 +1,5 @@
+Hardware 100
+Grocery 10
+Grocery 55
+Drapery 200
+Grocery 5

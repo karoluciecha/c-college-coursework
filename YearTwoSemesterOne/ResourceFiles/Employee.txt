@@ -1,0 +1,2 @@
+Name: Karol, Number: 22, Hours Weekly: 39.00, Hourly Rate: 13.50
+Name: Darren, Number: 90, Hours Weekly: 60.00, Hourly Rate: 25.55
