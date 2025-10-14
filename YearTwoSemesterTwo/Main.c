@@ -6,6 +6,7 @@ void displayMainMenu();
 void runDailySalesProgram();
 void runEmployeeRecordsProgram();
 void runLibraryProgram();
+void runSingleLinkedListProgram();
 double getDoubleInput(const char* prompt);
 int getIntInput(const char* prompt);
 void getStringInput(const char* prompt, char* buffer, size_t bufferSize);
@@ -35,7 +36,7 @@ printf("=========== YEAR TWO SEMESTER TWO ===========\n\n");
             runLibraryProgram();
 			break;
 		case 4:
-            // runAverageFactorialProgram();
+            runSingleLinkedListProgram();
 			break;
 		case 5:
             // runMonthlyPayrollProgram();
@@ -77,7 +78,7 @@ void displayMainMenu() {
     printf("1. Daily Sales Stats\n");
     printf("2. Employee Records\n");
     printf("3. Open Books Library\n");
-    printf("4. Average & Factorial\n");
+    printf("4. Single Linked List Demo\n");
     printf("5. Monthly Payroll\n");
     printf("6. Arrays & Files\n");
 	printf("7. Student Grading System\n");
