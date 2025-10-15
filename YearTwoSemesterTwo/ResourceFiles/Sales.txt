@@ -1,0 +1,25 @@
+3
+Property Registration Number: 1
+Property Eircode: AB
+Property County: Galway
+Property Type: Bungalow
+Year of the sale: 2020
+Property sale price: 400000
+Sale status: Sold
+
+Property Registration Number: 2
+Property Eircode: AC
+Property County: Galway
+Property Type: Bungalow
+Year of the sale: 2022
+Property sale price: 500000
+Sale status: Open
+
+Property Registration Number: 3
+Property Eircode: AD
+Property County: Dublin
+Property Type: Bungalow
+Year of the sale: 2000
+Property sale price: 600000
+Sale status: Sold
+

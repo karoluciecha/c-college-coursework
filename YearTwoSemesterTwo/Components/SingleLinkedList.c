@@ -79,7 +79,7 @@ void runSingleLinkedListProgram()
 
 				if (option == 1) deleteNodeStart(&headPtr);
 				else if (option == 2) deleteNodePosition(&headPtr);
-				else if (option == 3) deleteNodeLast(headPtr);
+				else if (option == 3) deleteNodeLast(&headPtr);
 				else if (option == 4) deleteNodeData(&headPtr);
 				else if (option == -1) break;
 				else printf("Invalid option\n");

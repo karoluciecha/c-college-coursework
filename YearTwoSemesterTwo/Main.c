@@ -7,6 +7,8 @@ void runDailySalesProgram();
 void runEmployeeRecordsProgram();
 void runLibraryProgram();
 void runSingleLinkedListProgram();
+void runLinkedLibraryProgram();
+void runPropertySalesProgram();
 double getDoubleInput(const char* prompt);
 int getIntInput(const char* prompt);
 void getStringInput(const char* prompt, char* buffer, size_t bufferSize);
@@ -39,10 +41,10 @@ printf("=========== YEAR TWO SEMESTER TWO ===========\n\n");
             runSingleLinkedListProgram();
 			break;
 		case 5:
-            // runMonthlyPayrollProgram();
+            runLinkedLibraryProgram();
 			break;
         case 6:
-            // runArraysAndFilesProgram();
+            runPropertySalesProgram();
             break;
 		case 7:
 			// runStudendGradingSystemProgram();
@@ -79,12 +81,8 @@ void displayMainMenu() {
     printf("2. Employee Records\n");
     printf("3. Open Books Library\n");
     printf("4. Single Linked List Demo\n");
-    printf("5. Monthly Payroll\n");
-    printf("6. Arrays & Files\n");
-	printf("7. Student Grading System\n");
-    printf("8. Employee Records\n");
-    printf("9. Mayor Electoral College System\n");
-    printf("10. (Exam One) Monthly Sales System\n");
+    printf("5. Linked Books Library\n");
+    printf("6. (Exam One) Property Sales System\n");
     printf("11. (Exam Two) House Price Calculator\n");
     printf("12. (Project) The Game of War\n");
     printf("0. Exit\n");

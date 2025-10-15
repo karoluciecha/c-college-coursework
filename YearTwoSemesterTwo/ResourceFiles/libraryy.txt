@@ -1,0 +1,24 @@
+1200
+start
+kar
+233.22
+999
+end
+kar
+9999.99
+888
+trzecia
+kar
+99.88
+0
+positionend
+kar
+9999.99
+89873
+posiition end again
+kar
+99.99
+987
+HerrPrince
+hrrprnc
+9999.99
