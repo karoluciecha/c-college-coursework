@@ -18,9 +18,7 @@ typedef struct book
 // Function prototypes
 int login();
 void displayMenu(int isAdmin, Book **headPtr);
-void readInt(const char *prompt, int *value);
 void readDouble(const char *prompt, double *value);
-void readChar(const char *prompt, char *buffer, int size);
 void libraryBackup(Book *headPtr);
 void libraryRestore(Book **headPtr);
 void addBookStart(Book **headPtr);
@@ -792,27 +790,6 @@ void editBookPrice(Book **headPtr)
     printf("Book with ISBN %d not found.\n", targetIsbn);
 }
 
-// Function to safely read an integer from user input using `scanf_s`
-void readInt(const char *prompt, int *value)
-{
-    while (1)
-    {
-        printf("%s", prompt);
-        if (scanf_s("%d", value) == 1)
-        {
-            while (getchar() != '\n')
-                ; // Clear input buffer
-            return;
-        }
-        else
-        {
-            printf("Invalid input. Please enter an integer.\n");
-            while (getchar() != '\n')
-                ; // Clear invalid input
-        }
-    }
-}
-
 // Function to safely read a double from user input using `scanf_s`
 void readDouble(const char *prompt, double *value)
 {
@@ -830,23 +807,6 @@ void readDouble(const char *prompt, double *value)
             printf("Invalid input. Please enter a valid number.\n");
             while (getchar() != '\n')
                 ; // Clear invalid input
-        }
-    }
-}
-
-// Function to safely read a string from user input using `scanf_s`
-void readChar(const char *prompt, char *buffer, int size)
-{
-    while (1)
-    {
-        printf("%s", prompt);
-        if (gets_s(buffer, size))
-        {
-            return;
-        }
-        else
-        {
-            printf("Invalid input. Please enter a valid string.\n");
         }
     }
 }

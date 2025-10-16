@@ -9,9 +9,12 @@ void runLibraryProgram();
 void runSingleLinkedListProgram();
 void runLinkedLibraryProgram();
 void runPropertySalesProgram();
+void runCustomerAccountsProgram();
 double getDoubleInput(const char* prompt);
 int getIntInput(const char* prompt);
+void readInt(const char *prompt, int *value);
 void getStringInput(const char* prompt, char* buffer, size_t bufferSize);
+void readChar(const char *prompt, char *buffer, size_t size);
 
 int main() {
 int choice;
@@ -47,7 +50,7 @@ printf("=========== YEAR TWO SEMESTER TWO ===========\n\n");
             runPropertySalesProgram();
             break;
 		case 7:
-			// runStudendGradingSystemProgram();
+			runCustomerAccountsProgram();
 			break;
         case 8:
             // runEmployeeRecordsProgram();
@@ -65,7 +68,7 @@ printf("=========== YEAR TWO SEMESTER TWO ===========\n\n");
           //  runTheGameOfWarProgram();
             break;
 		case 0:
-			printf("Program terminated.\n\n");
+			printf("Program terminated.\n");
 			break;
 		default:
 			printf("Invalid choice. Please try again.\n\n");
@@ -83,7 +86,7 @@ void displayMainMenu() {
     printf("4. Single Linked List Demo\n");
     printf("5. Linked Books Library\n");
     printf("6. (Exam One) Property Sales System\n");
-    printf("11. (Exam Two) House Price Calculator\n");
+    printf("7. (Exam Two) Customer Accounts Manager\n");
     printf("12. (Project) The Game of War\n");
     printf("0. Exit\n");
     printf("\nSelect an option: ");
@@ -103,6 +106,27 @@ int getIntInput(const char* prompt) {
     }
     while (getchar() != '\n');
     return value;
+}
+
+// Function to safely read an integer from user input using `scanf_s`
+void readInt(const char *prompt, int *value)
+{
+    while (1)
+    {
+        printf("%s", prompt);
+        if (scanf_s("%d", value) == 1)
+        {
+            while (getchar() != '\n')
+                ; // Clear input buffer
+            return;
+        }
+        else
+        {
+            printf("Invalid input. Please enter an integer.\n");
+            while (getchar() != '\n')
+                ; // Clear invalid input
+        }
+    }
 }
 
 double getDoubleInput(const char* prompt) {
@@ -159,4 +183,28 @@ void getStringInput(const char* prompt, char* buffer, size_t bufferSize) {
 			printf("Error reading input. Please try again.\n");
 		}
 	}
+}
+
+// Function to read a char from user input
+void readChar(const char *prompt, char *buffer, size_t size)
+{
+    while (1)
+    {
+        printf("%s", prompt);
+        if (gets_s(buffer, size))
+        {
+            if (buffer[0] != '\0')
+            {
+                return;
+            }
+            else
+            {
+                printf("Input cannot be empty. Please try again.\n");
+            }
+        }
+        else
+        {
+            printf("Invalid input. Please enter a valid string.\n");
+        }
+    }
 }
