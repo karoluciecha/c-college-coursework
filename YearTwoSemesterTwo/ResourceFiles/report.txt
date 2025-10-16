@@ -1,0 +1,127 @@
+=== Machinery Report ===
+
+--- Machine #1 ---
+Chassis Number      : CR75321
+Make                : Liebherr
+Model               : 1030-2.1
+Year of Manufacture : 2017
+Cost                : 300000.00
+Current Valuation   : 180000.00
+Current Mileage     : 4500.00
+Next Service Mileage: 5000.00
+Owner Name          : Carol White
+Owner Email         : carol.white@builds.com
+Owner Phone         : 555-9876
+Machine Type        : Crane
+Breakdowns This Year: More than five times
+
+--- Machine #2 ---
+Chassis Number      : EX99887
+Make                : Catepillar
+Model               : 320D2
+Year of Manufacture : 2021
+Cost                : 120000.00
+Current Valuation   : 110000.00
+Current Mileage     : 800.00
+Next Service Mileage: 1000.00
+Owner Name          : Bob Johnson
+Owner Email         : bob.johnson@machines.com
+Owner Phone         : 555-5678
+Machine Type        : Excavator
+Breakdowns This Year: Less than three times
+
+--- Machine #3 ---
+Chassis Number      : MX11223
+Make                : Schwing Stetter
+Model               : AM6SH
+Year of Manufacture : 2018
+Cost                : 67000.00
+Current Valuation   : 42000.00
+Current Mileage     : 3200.00
+Next Service Mileage: 3500.00
+Owner Name          : Emma Green
+Owner Email         : emma.green@concretepros.com
+Owner Phone         : 555-6789
+Machine Type        : Mixer
+Breakdowns This Year: Less than three times
+
+--- Machine #4 ---
+Chassis Number      : RL45678
+Make                : Volvo
+Model               : SD160B
+Year of Manufacture : 2020
+Cost                : 98000.00
+Current Valuation   : 82000.00
+Current Mileage     : 2300.00
+Next Service Mileage: 2500.00
+Owner Name          : David Lee
+Owner Email         : david.lee@roadworks.com
+Owner Phone         : 555-3456
+Machine Type        : Roller
+Breakdowns This Year: Less than five times
+
+--- Machine #5 ---
+Chassis Number      : testNumber
+Make                : MakeTest
+Model               : ModelTest
+Year of Manufacture : 2025
+Cost                : 9999.99
+Current Valuation   : 9000.00
+Current Mileage     : 50.00
+Next Service Mileage: 1000.00
+Owner Name          : Karol
+Owner Email         : .@.com
+Owner Phone         : 888909
+Machine Type        : Tractor
+Breakdowns This Year: Never
+
+--- Machine #6 ---
+Chassis Number      : TR12345
+Make                : John Deere
+Model               : 5055E
+Year of Manufacture : 2019
+Cost                : 45000.00
+Current Valuation   : 35000.00
+Current Mileage     : 1500.00
+Next Service Mileage: 2000.00
+Owner Name          : Alice Smith
+Owner Email         : alice.sm@example.com
+Owner Phone         : 555-1234
+Machine Type        : Tractor
+Breakdowns This Year: Never
+
+--- Machine #7 ---
+Chassis Number      : TR78901
+Make                : Mahindra
+Model               : 575 DI
+Year of Manufacture : 2016
+Cost                : 39000.00
+Current Valuation   : 25000.00
+Current Mileage     : 5400.00
+Next Service Mileage: 6000.00
+Owner Name          : Frank Moore
+Owner Email         : moore.frank@agrotools.com
+Owner Phone         : 555-4321
+Machine Type        : Tractor
+Breakdowns This Year: More than five times
+
+
+=== Performance Statistics ===
+Total Machines: 7
+
+Never:
+	Count   : 2
+	Percent : 28.57%
+
+Less than three times:
+	Count   : 2
+	Percent : 28.57%
+
+Less than five times:
+	Count   : 1
+	Percent : 14.29%
+
+More than five times:
+	Count   : 2
+	Percent : 28.57%
+

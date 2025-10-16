@@ -1,0 +1,78 @@
+CR75321
+Liebherr
+1030-2.1
+2017
+300000.00
+180000.00
+4500.00
+5000.00
+Carol White
+carol.white@builds.com
+555-9876
+3
+3
+EX99887
+Catepillar
+320D2
+2021
+120000.00
+110000.00
+800.00
+1000.00
+Bob Johnson
+bob.johnson@machines.com
+555-5678
+1
+1
+MX11223
+Schwing Stetter
+AM6SH
+2018
+67000.00
+42000.00
+3200.00
+3500.00
+Emma Green
+emma.green@concretepros.com
+555-6789
+4
+1
+RL45678
+Volvo
+SD160B
+2020
+98000.00
+82000.00
+2300.00
+2500.00
+David Lee
+david.lee@roadworks.com
+555-3456
+2
+2
+testNumber
+MakeTest
+ModelTest
+2025
+9999.99
+9000.00
+50.00
+1000.00
+Karol
+.@.com
+888909
+0
+0
+TR12345
+John Deere
+5055E
+2019
+45000.00
+35000.00
+1500.00
+2000.00
+Alice Smith
+alice.sm@example.com
+555-1234
+0
+0

@@ -10,6 +10,7 @@ void runSingleLinkedListProgram();
 void runLinkedLibraryProgram();
 void runPropertySalesProgram();
 void runCustomerAccountsProgram();
+void runMachineryManagementProgram();
 double getDoubleInput(const char* prompt);
 int getIntInput(const char* prompt);
 void readInt(const char *prompt, int *value);
@@ -53,19 +54,7 @@ printf("=========== YEAR TWO SEMESTER TWO ===========\n\n");
 			runCustomerAccountsProgram();
 			break;
         case 8:
-            // runEmployeeRecordsProgram();
-            break;
-        case 9:
-            //runMayorElectoralCollegeProgram();
-            break;
-        case 10:
-            //runMonthlySalesProgram();
-            break;
-        case 11:
-           // runHousePriceCalculatorProgram();
-            break;
-        case 12:
-          //  runTheGameOfWarProgram();
+            void runMachineryManagementProgram();
             break;
 		case 0:
 			printf("Program terminated.\n");
@@ -87,7 +76,7 @@ void displayMainMenu() {
     printf("5. Linked Books Library\n");
     printf("6. (Exam One) Property Sales System\n");
     printf("7. (Exam Two) Customer Accounts Manager\n");
-    printf("12. (Project) The Game of War\n");
+    printf("12. (Project) Machinery Manager\n");
     printf("0. Exit\n");
     printf("\nSelect an option: ");
 }
