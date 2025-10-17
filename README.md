@@ -95,5 +95,5 @@ You are welcome to explore, modify, and learn from the code.
 
 ## 🙏 Acknowledgments
 
-Thank you for checking out my C++ coursework repository!
+Thank you for checking out my C coursework repository!
 If you have any feedback or suggestions, feel free to reach out.
