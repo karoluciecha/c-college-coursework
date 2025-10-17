@@ -18,7 +18,6 @@ typedef struct book
 // Function prototypes
 int login();
 void displayMenu(int isAdmin, Book **headPtr);
-void readDouble(const char *prompt, double *value);
 void libraryBackup(Book *headPtr);
 void libraryRestore(Book **headPtr);
 void addBookStart(Book **headPtr);
@@ -372,8 +371,8 @@ void addBookStart(Book **headPtr)
     }
 
     readInt("\nPlease enter the book's ISBN: ", &newNode->isbn);
-    readChar("Please enter the book's title: ", newNode->title, sizeof(newNode->title));
-    readChar("Please enter the book's author: ", newNode->author, sizeof(newNode->author));
+    readChar("Please enter the book's title: ", newNode->title, sizeof(newNode->title), 0);
+    readChar("Please enter the book's author: ", newNode->author, sizeof(newNode->author), 0);
     readDouble("Please enter the book's price: ", &newNode->price);
     newNode->next = *headPtr; // newNode->next is set to point to the current headPtr (i.e., the old head)
     *headPtr = newNode;       // headPtr is updated to the new node
@@ -423,8 +422,8 @@ void addBookPosition(Book **headPtr)
     }
 
     readInt("\nPlease enter the book's ISBN: ", &newNode->isbn);
-    readChar("Please enter the book's title: ", newNode->title, sizeof(newNode->title));
-    readChar("Please enter the book's author: ", newNode->author, sizeof(newNode->author));
+    readChar("Please enter the book's title: ", newNode->title, sizeof(newNode->title), 0);
+    readChar("Please enter the book's author: ", newNode->author, sizeof(newNode->author), 0);
     readDouble("Please enter the book's price: ", &newNode->price);
     newNode->next = current->next;
     current->next = newNode;
@@ -452,8 +451,8 @@ void addBookLast(Book **headPtr)
     }
 
     readInt("\nPlease enter the book's ISBN: ", &newNode->isbn);
-    readChar("Please enter the book's title: ", newNode->title, sizeof(newNode->title));
-    readChar("Please enter the book's author: ", newNode->author, sizeof(newNode->author));
+    readChar("Please enter the book's title: ", newNode->title, sizeof(newNode->title), 0);
+    readChar("Please enter the book's author: ", newNode->author, sizeof(newNode->author), 0);
     readDouble("Please enter the book's price: ", &newNode->price);
     newNode->next = NULL; // The new book will be the last node
     temp->next = newNode; // Link the new book to the last node
@@ -670,8 +669,8 @@ void editBookAll(Book **headPtr)
         {
             printf("Editing book with ISBN %d...\n", targetIsbn);
             readInt("Enter new ISBN: ", &current->isbn);
-            readChar("Enter new title: ", current->title, sizeof(current->title));
-            readChar("Enter new author: ", current->author, sizeof(current->author));
+            readChar("Enter new title: ", current->title, sizeof(current->title), 0);
+            readChar("Enter new author: ", current->author, sizeof(current->author), 0);
             readDouble("Enter new price: ", &current->price);
             printf("Book updated successfully.\n");
             return;
@@ -726,7 +725,7 @@ void editBookTitle(Book **headPtr)
     {
         if (current->isbn == targetIsbn)
         {
-            readChar("Enter new title: ", current->title, sizeof(current->title));
+            readChar("Enter new title: ", current->title, sizeof(current->title), 0);
             printf("Title updated successfully.\n");
             return;
         }
@@ -753,7 +752,7 @@ void editBookAuthor(Book **headPtr)
     {
         if (current->isbn == targetIsbn)
         {
-            readChar("Enter new author: ", current->author, sizeof(current->author));
+            readChar("Enter new author: ", current->author, sizeof(current->author), 0);
             printf("Author updated successfully.\n");
             return;
         }
@@ -788,25 +787,4 @@ void editBookPrice(Book **headPtr)
     }
 
     printf("Book with ISBN %d not found.\n", targetIsbn);
-}
-
-// Function to safely read a double from user input using `scanf_s`
-void readDouble(const char *prompt, double *value)
-{
-    while (1)
-    {
-        printf("%s", prompt);
-        if (scanf_s("%lf", value) == 1)
-        {
-            while (getchar() != '\n')
-                ; // Clear input buffer
-            return;
-        }
-        else
-        {
-            printf("Invalid input. Please enter a valid number.\n");
-            while (getchar() != '\n')
-                ; // Clear invalid input
-        }
-    }
 }

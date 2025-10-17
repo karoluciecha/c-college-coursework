@@ -19,10 +19,10 @@ typedef struct customer
 
 // Function prototypes
 void readFloat(const char *prompt, float *value);
-int mainMenu();
+int mainMenuC();
 int isUniqueID(Customer *headRef, const char *companyID);
-void collectionBackup(Customer *collectionHeadPointer);
-void collectionRestore(Customer **collectionHeadPointer, Customer **collectionTailPointer);
+void collectionBackupC(Customer *collectionHeadPointer);
+void collectionRestoreC(Customer **collectionHeadPointer, Customer **collectionTailPointer);
 void addCustomer(Customer **headRef, Customer **tailRef);
 void listCustomersAboveLimit(Customer *headRef);
 void updateOutstandingBalance(Customer *headRef);
@@ -33,9 +33,9 @@ void runCustomerAccountsProgram()
     Customer *collectionHeadPointer = NULL; // pointer to the first item (head node)
     Customer *collectionTailPointer = NULL; // pointer to the last item (tail node)
 
-    collectionRestore(&collectionHeadPointer, &collectionTailPointer);
+    collectionRestoreC(&collectionHeadPointer, &collectionTailPointer);
 
-    int action = mainMenu();
+    int action = mainMenuC();
     while (action)
     {
         switch (action)
@@ -53,7 +53,7 @@ void runCustomerAccountsProgram()
             getTotalOutstandingBalance(collectionHeadPointer);
             break;
         case -1: // Exit program
-            collectionBackup(collectionHeadPointer);
+            collectionBackupC(collectionHeadPointer);
             printf("Exiting program...\n\n");
             Customer *temp;
             while (collectionHeadPointer)
@@ -71,7 +71,7 @@ void runCustomerAccountsProgram()
         }
         system("pause");
         system("cls");
-        action = mainMenu();
+        action = mainMenuC();
     }
 }
 
@@ -97,7 +97,7 @@ void readFloat(const char *prompt, float *value)
 }
 
 // Function to present menu options to the user
-int mainMenu()
+int mainMenuC()
 {
     int choice = 0;
 
@@ -138,7 +138,7 @@ int isUniqueID(Customer *headRef, const char *companyID)
 }
 
 // Function to save customer details to file
-void collectionBackup(Customer *collectionHeadPointer)
+void collectionBackupC(Customer *collectionHeadPointer)
 {
     system("cls");
     FILE *file = fopen("ResourceFiles/customer.txt", "w"); // "w" mode: create or overwrite
@@ -171,7 +171,7 @@ void collectionBackup(Customer *collectionHeadPointer)
 }
 
 // Function to restore customer details from file
-void collectionRestore(Customer **collectionHeadPointer, Customer **collectionTailPointer)
+void collectionRestoreC(Customer **collectionHeadPointer, Customer **collectionTailPointer)
 {
     FILE *file = fopen("ResourceFiles/customer.txt", "r"); // "r" mode: read file
     if (!file)
@@ -285,7 +285,7 @@ void addCustomer(Customer **headRef, Customer **tailRef)
     // 1. companyID (must be unique)
     do
     {
-        readChar("Enter the company ID: ", buffer, sizeof(buffer));
+        readChar("Enter the company ID: ", buffer, sizeof(buffer), 0);
         if (!isUniqueID(*headRef, buffer))
         {
             printf("That company ID already exists. Please try again.\n\n");
@@ -296,10 +296,10 @@ void addCustomer(Customer **headRef, Customer **tailRef)
     strcpy_s(newCustomer->companyID, sizeof(newCustomer->companyID), buffer);
 
     // 2. companyName
-    readChar("Enter the company name: ", newCustomer->companyName, sizeof(newCustomer->companyName));
+    readChar("Enter the company name: ", newCustomer->companyName, sizeof(newCustomer->companyName), 0);
 
     // 3. companyVAT
-    readChar("Enter the company VAT number: ", newCustomer->companyVAT, sizeof(newCustomer->companyVAT));
+    readChar("Enter the company VAT number: ", newCustomer->companyVAT, sizeof(newCustomer->companyVAT), 0);
 
     // 4. outstandingBalance
     readFloat("Enter the outstanding balance: ", &newCustomer->outstandingBalance);
@@ -358,7 +358,7 @@ void updateOutstandingBalance(Customer *headRef)
     }
 
     char searchCompanyID[MAX_STR_LEN];
-    readChar("Enter the company ID: ", searchCompanyID, sizeof(searchCompanyID));
+    readChar("Enter the company ID: ", searchCompanyID, sizeof(searchCompanyID), 0);
 
     // Search the list
     Customer *cur = headRef;

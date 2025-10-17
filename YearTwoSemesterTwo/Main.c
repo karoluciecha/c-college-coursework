@@ -12,10 +12,11 @@ void runPropertySalesProgram();
 void runCustomerAccountsProgram();
 void runMachineryManagementProgram();
 double getDoubleInput(const char* prompt);
+void readDouble(const char *prompt, double *value);
 int getIntInput(const char* prompt);
 void readInt(const char *prompt, int *value);
 void getStringInput(const char* prompt, char* buffer, size_t bufferSize);
-void readChar(const char *prompt, char *buffer, size_t size);
+void readChar(const char *prompt, char *buffer, size_t size, int allowEmpty);
 
 int main() {
 int choice;
@@ -54,7 +55,7 @@ printf("=========== YEAR TWO SEMESTER TWO ===========\n\n");
 			runCustomerAccountsProgram();
 			break;
         case 8:
-            void runMachineryManagementProgram();
+            runMachineryManagementProgram();
             break;
 		case 0:
 			printf("Program terminated.\n");
@@ -76,7 +77,7 @@ void displayMainMenu() {
     printf("5. Linked Books Library\n");
     printf("6. (Exam One) Property Sales System\n");
     printf("7. (Exam Two) Customer Accounts Manager\n");
-    printf("12. (Project) Machinery Manager\n");
+    printf("8. (Project) Machinery Manager\n");
     printf("0. Exit\n");
     printf("\nSelect an option: ");
 }
@@ -133,6 +134,27 @@ double getDoubleInput(const char* prompt) {
     return value;
 }
 
+// Function to read a double from user input
+void readDouble(const char *prompt, double *value)
+{
+    while (1)
+    {
+        printf("%s", prompt);
+        if (scanf_s("%lf", value) == 1)
+        {
+            while (getchar() != '\n')
+                ; // Clear input buffer
+            return;
+        }
+        else
+        {
+            printf("Invalid input. Please enter a valid number.\n");
+            while (getchar() != '\n')
+                ; // Clear invalid input
+        }
+    }
+}
+
 void getStringInput(const char* prompt, char* buffer, size_t bufferSize) {
 	while (1) {
 		printf("%s", prompt);
@@ -175,18 +197,18 @@ void getStringInput(const char* prompt, char* buffer, size_t bufferSize) {
 }
 
 // Function to read a char from user input
-void readChar(const char *prompt, char *buffer, size_t size)
+void readChar(const char *prompt, char *buffer, size_t size, int allowEmpty)
 {
     while (1)
     {
         printf("%s", prompt);
         if (gets_s(buffer, size))
         {
-            if (buffer[0] != '\0')
+            if (buffer[0] != '\0' || allowEmpty)
             {
                 return;
             }
-            else
+            else if (!allowEmpty)
             {
                 printf("Input cannot be empty. Please try again.\n");
             }

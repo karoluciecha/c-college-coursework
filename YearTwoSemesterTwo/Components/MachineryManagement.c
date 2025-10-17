@@ -75,9 +75,6 @@ int validateEmail(const char *email);
 int isUniqueChassis(Machine *headRef, const char *chassisNumber);
 void sortByChassisNumber(Machine **headRef, Machine **tailRef);
 void addMachine(Machine **headRef, Machine **tailRef);
-void readInt(const char *prompt, int *value);
-void readChar(const char *prompt, char *buffer, size_t size, int allowEmpty);
-void readDouble(const char *prompt, double *value);
 void displayAllMachines(Machine *headRef);
 void displayMachineDetails(Machine *headRef);
 void saveReport(Machine *headRef);
@@ -89,7 +86,11 @@ void displayBreakdownStats(Machine *headRef, int category);
 void runMachineryManagementProgram()
 {
     if (!greetAndLogin())
+    {
+        system("pause");
+        system("cls");
         return;
+    }
 
     Machine *collectionHeadPointer = NULL; // pointer to the first item (head node)
     Machine *collectionTailPointer = NULL; // pointer to the last item (tail node)
@@ -141,72 +142,9 @@ void runMachineryManagementProgram()
     }
 
     collectionBackup(collectionHeadPointer);
-}
-
-// Function to read an integer from user input
-void readInt(const char *prompt, int *value)
-{
-    while (1)
-    {
-        printf("%s", prompt);
-        if (scanf_s("%d", value) == 1)
-        {
-            while (getchar() != '\n')
-                ; // Clear input buffer
-            return;
-        }
-        else
-        {
-            printf("Invalid input. Please enter an integer.\n");
-            while (getchar() != '\n')
-                ; // Clear invalid input
-        }
-    }
-}
-
-// Function to read a char from user input
-void readChar(const char *prompt, char *buffer, size_t size, int allowEmpty)
-{
-    while (1)
-    {
-        printf("%s", prompt);
-        if (gets_s(buffer, size))
-        {
-            if (buffer[0] != '\0' || allowEmpty)
-            {
-                return;
-            }
-            else if (!allowEmpty)
-            {
-                printf("Input cannot be empty. Please try again.\n");
-            }
-        }
-        else
-        {
-            printf("Invalid input. Please enter a valid string.\n");
-        }
-    }
-}
-
-// Function to read a double from user input
-void readDouble(const char *prompt, double *value)
-{
-    while (1)
-    {
-        printf("%s", prompt);
-        if (scanf_s("%lf", value) == 1)
-        {
-            while (getchar() != '\n')
-                ; // Clear input buffer
-            return;
-        }
-        else
-        {
-            printf("Invalid input. Please enter a valid number.\n");
-            while (getchar() != '\n')
-                ; // Clear invalid input
-        }
-    }
+    system("pause");
+    system("cls");
+    return;
 }
 
 // Function to log the user into the system
@@ -1417,7 +1355,7 @@ void updateMachine(Machine *headRef)
         printf("Invalid selection. Please enter a number between 1 and %zu or press Enter to skip.\n", sizeof(BreakdownFreqNames) / sizeof(BreakdownFreqNames[0]));
     }
 
-    printf("\Details of machine \"%s\" updated successfully.\n", cur->chassisNumber);
+    printf("\nDetails of machine \"%s\" updated successfully.\n", cur->chassisNumber);
     Sleep(1000);
 }
 
